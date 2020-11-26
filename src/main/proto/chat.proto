@@ -7,10 +7,10 @@ option objc_class_prefix = "HLW";
 package chat;
 
 service ChatManager {
-  rpc PostMessage(Message) returns (Response) {}
+  rpc PostMessage(Msg) returns (Response) {}
 }
 
-message Message {
+message Msg {
   string user = 1;
   string message = 2;
 }
