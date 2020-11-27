@@ -8,13 +8,21 @@ package chat;
 
 service ChatManager {
   rpc PostMessage(Msg) returns (Response) {}
+  rpc ListMessages(Request) returns (stream Msg) {}
+  rpc ClearChat(Request) returns (Response){}
 }
 
 message Msg {
   string user = 1;
   string message = 2;
+  string date = 3;
 }
 
 message Response {
   string response = 1;
+}
+
+message Request {
+  string startDate = 1;
+  string endDate = 2;
 }
